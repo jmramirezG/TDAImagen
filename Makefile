@@ -1,8 +1,11 @@
-negativo: negativo.o imagenES.o
-	g++ -g -o negativo negativo.o imagenES.o
+bin/prueba: obj/prueba.o obj/imagenES.o obj/Imagen.o
+	g++ -g -o bin/prueba obj/prueba.o obj/imagenES.o obj/Imagen.o
 
-imagenES.o: imagenES.cpp imagenES.h
-	g++ -g -c -o imagenES.o -I. imagenES.cpp
+obj/Imagen.o: include/imagenES.h include/Imagen.hpp src/Imagen.cpp
+	g++ -g -c -o obj/Imagen.o -I./include src/Imagen.cpp
 
-negativo.o : negativo.cpp
-	g++ -g -c -o negativo.o -I. negativo.cpp
+obj/imagenES.o: src/imagenES.cpp include/imagenES.h
+	g++ -g -c -o obj/imagenES.o -I./include src/imagenES.cpp
+
+obj/prueba.o : src/prueba.cpp
+	g++ -g -c -o obj/prueba.o -I./include src/prueba.cpp
