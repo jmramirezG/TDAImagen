@@ -1,0 +1,1 @@
+Creación del Tipo de Dato Abstracto "Imagen"
