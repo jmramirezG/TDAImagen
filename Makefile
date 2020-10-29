@@ -1,7 +1,19 @@
-bin/prueba: obj/prueba.o obj/imagenES.o obj/Imagen.o
-	g++ -g -o bin/prueba obj/prueba.o obj/imagenES.o obj/Imagen.o
+all: bin/prueba
 
-obj/Imagen.o: include/imagenES.h include/Imagen.hpp src/Imagen.cpp
+clear:
+	rm bin/prueba obj/*.o lib/*a
+	echo "Borrados los archivos .o, .a y ejecutable"
+
+bin/prueba: obj/prueba.o lib/libformas.a
+	g++ -Llib/ -o bin/prueba obj/prueba.o -lformas
+
+lib/libformas.a: obj/imagenES.o obj/Imagen.o obj/funcionesImagen.o
+	ar rvs lib/libformas.a obj/imagenES.o obj/Imagen.o obj/funcionesImagen.o
+
+obj/funcionesImagen.o: src/funcionesImagen.cpp include/funcionesImagen.h include/Imagen.h include/imagenES.h
+	g++ -g -c -o obj/funcionesImagen.o -I./include src/funcionesImagen.cpp
+
+obj/Imagen.o: include/imagenES.h include/Imagen.h src/Imagen.cpp
 	g++ -g -c -o obj/Imagen.o -I./include src/Imagen.cpp
 
 obj/imagenES.o: src/imagenES.cpp include/imagenES.h

@@ -1,5 +1,5 @@
-#include <Imagen.hpp>
-#include <funcionesImagen.hpp>
+#include <Imagen.h>
+#include <funcionesImagen.h>
 #include <iostream>
 
 using namespace std;
@@ -14,7 +14,7 @@ int main (int argc, char *argv[]){
   // Comprobar validez de la llamada
   if (argc != 3){
     cerr << "Error: Numero incorrecto de parametros.\n";
-    cerr << "Uso: negativo <FichImagenOriginal> <FichImagenDestino>\n";
+    cerr << "Uso: prueba <FichImagenOriginal> <FichImagenDestino>\n";
     exit (1);
   }
 
@@ -42,18 +42,14 @@ int main (int argc, char *argv[]){
   
   cout << "   Imagen   = " << nf  << " filas x " << nc << " columnas " << endl;
   
-  npixeles = nf*nc;
   long int contador = 0;
-  image = new unsigned char[npixeles];
-  for (int f = 0; f < nf; f++) {
-      for (int c = 0; c < nc; c++) {
-          image[contador] = i.valor_pixel(f,c);
-          contador++;
-      }
-  }
+  enmarcar_imagen(i);
+  image = i.getTipo() == IMG_PGM ? i.punteroMemoria_pgm() : i.punteroMemoria_ppm();
+
+  bool correcto = i.getTipo() == IMG_PGM ? EscribirImagenPGM(destino, image, nf, nc) : EscribirImagenPPM(destino, image, nf, nc);
   
   // Guardar la imagen resultado en el fichero
-  if (EscribirImagenPGM (destino, image, nf, nc))
+  if (correcto)
     cout  << "La imagen se guardo en " << destino << endl;
   else{
     cerr << "Error: No pudo guardarse la imagen." << endl;

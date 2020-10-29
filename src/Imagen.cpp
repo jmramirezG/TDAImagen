@@ -1,4 +1,4 @@
-#include <Imagen.hpp>
+#include <Imagen.h>
 #include <cassert>
 #include <iostream>
 
@@ -30,21 +30,42 @@ Imagen::Imagen(const Imagen & J) {
 }
 
 Imagen::Imagen(char * nombre) {
-    TipoImagen tipo = LeerTipoImagen(nombre);
+    TipoImagen Tipo = LeerTipoImagen(nombre);
     byte * memoria;
-    if (tipo == IMG_PGM) {
+    if (Tipo == IMG_PGM) {
         memoria = LeerImagenPGM(nombre, nF, nC);
-    } else if (tipo == IMG_PPM) {
+    } else if (Tipo == IMG_PPM) {
         memoria = LeerImagenPPM(nombre, nF, nC);
     } else
         std::abort;
-    
-    valores = new byte *[nF];
+    if (Tipo == IMG_PPM) {
+        std::cout << "Desea que la imagen se pase a escala de grises? (y/n) ";
+        char r;
+        std::cin >> r;
+        assert(r == 'y' || r == 'n');
+        if (r == 'y') {
+            this->tipo = IMG_PGM;
+            valores = new byte *[nF];
+            for (int i = 0; i < nF; i++)
+                valores[i] = new byte [nC];
 
-    for (int i = 0; i < nF; i++)
-        valores[i] = new byte [nC];
-    
-    rellenarImagen_grises(memoria, tipo);
+            rellenarImagen_grises(memoria);
+        } else {
+            this->tipo = IMG_PPM;
+            valores = new byte *[nF];
+            for (int i = 0; i < nF; i++)
+                valores[i] = new byte [nC*3];
+
+            rellenarImagen_ppm(memoria);
+        }
+    } else {
+        this->tipo = IMG_PGM;
+        valores = new byte *[nF];
+        for (int i = 0; i < nF; i++)
+            valores[i] = new byte [nC];
+
+        rellenarImagen_pgm(memoria);
+    }
 }
 
 Imagen::Imagen(int filas, int columnas) {
@@ -71,23 +92,56 @@ int Imagen::num_columnas() const {
     return nC;
 }
 
+TipoImagen Imagen::getTipo() const {
+    return tipo;
+}
+
+byte * Imagen::punteroMemoria_pgm() const {
+    assert(valores);
+    long int nPixeles = nF*nC;
+    byte *memoria = new byte[nPixeles];
+    nPixeles = 0;
+    for (int f = 0; f < nF; f++) {
+        for (int c = 0; c < nC; c++) {
+            memoria[nPixeles] = valor_pixel(f,c);
+            nPixeles++;
+        }
+    }
+    return memoria;
+}
+
+
+byte * Imagen::punteroMemoria_ppm() const {
+    assert(valores);
+
+    long int nBytes = nF*nC*3;
+    byte *memoria = new byte[nBytes];
+    nBytes = 0;
+    for (int f = 0; f < nF; f++) {
+        for (int c = 0; c < nC*3; c++) {
+            memoria[nBytes] = valor_pixel(f,c);
+            nBytes++;
+        }
+    }
+
+    return memoria;
+}
+
+
 void Imagen::asigna_pixel(int fila, int col, byte valor) {
-    assert(0 <= fila < num_filas() && 0 <= col < num_columnas());
+    assert(0 <= fila < num_filas() && 0 <= col < num_columnas()*3);
     assert(0 <= valor < 256);
     valores[fila][col] = valor;
 }
 
 byte Imagen::valor_pixel(int fila, int col) const {
-    assert(0 <= fila < num_filas() && 0 <= col < num_columnas());
+    assert(0 <= fila < num_filas() && 0 <= col < num_columnas()*3);
     return valores[fila][col];
 }
 
-void Imagen::rellenarImagen_grises(byte * memoria, TipoImagen tipo) {
-    if (tipo == IMG_PPM) {
-        byte * grises = Igris(memoria);
-        rellenarImagen_pgm(grises);
-    } else
-        rellenarImagen_pgm(memoria);
+void Imagen::rellenarImagen_grises(byte * memoria) {
+    byte * grises = Igris(memoria);
+    rellenarImagen_pgm(grises);
 }
 
 byte *Imagen::Igris(const byte *memoria) {
@@ -110,6 +164,16 @@ void Imagen::rellenarImagen_pgm(byte * memoria) {
     for (int f = 0; f < nF; f++) {
         for (int c = 0; c < nC; c++) {
             this->asigna_pixel(f,c,memoria[contador]);
+            contador++;
+        }
+    }
+}
+
+void Imagen::rellenarImagen_ppm(byte * memoria) {
+    long int contador = 0;
+    for (int f = 0; f < nF; f++) {
+        for (int c = 0; c < nC*3; c++){
+            asigna_pixel(f,c,memoria[contador]);
             contador++;
         }
     }
