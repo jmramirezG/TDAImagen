@@ -33,8 +33,8 @@ TipoImagen LeerTipoImagen (const char *nombre);
   * @brief Lee una imagen de tipo PPM
   *
   * @param nombre archivo a leer
-  * @param filas Parámetro de salida con las filas de la imagen.
-  * @param columnas Parámetro de salida con las columnas de la imagen.
+  * @param fils Parámetro de salida con las filas de la imagen.
+  * @param cols Parámetro de salida con las columnas de la imagen.
   * @return puntero a una nueva zona de memoria que contiene @a filas x @a columnas x 3
   * bytes que corresponden a los colores de todos los píxeles en formato
   * RGB (desde la esquina superior izqda a la inferior drcha). En caso de que no
@@ -50,8 +50,8 @@ unsigned char *LeerImagenPPM (const char *nombre, int& fils, int& cols);
   * @param nombre archivo a escribir
   * @param datos punteros a los @a f x @a c x 3 bytes que corresponden a los valores
   *    de los píxeles de la imagen en formato RGB.
-  * @param f filas de la imagen
-  * @param c columnas de la imagen
+  * @param fils filas de la imagen
+  * @param cols columnas de la imagen
   * @return si ha tenido éxito en la escritura.
   */
 bool EscribirImagenPPM (const char *nombre, const unsigned char *datos, 
@@ -61,8 +61,8 @@ bool EscribirImagenPPM (const char *nombre, const unsigned char *datos,
   * @brief Lee una imagen de tipo PGM
   *
   * @param nombre archivo a leer
-  * @param filas Parámetro de salida con las filas de la imagen.
-  * @param columnas Parámetro de salida con las columnas de la imagen.
+  * @param fils Parámetro de salida con las filas de la imagen.
+  * @param cols Parámetro de salida con las columnas de la imagen.
   * @return puntero a una nueva zona de memoria que contiene @a filas x @a columnas
   * bytes que corresponden a los grises de todos los píxeles
   * (desde la esquina superior izqda a la inferior drcha). En caso de que no
@@ -78,8 +78,8 @@ unsigned char *LeerImagenPGM (const char *nombre, int& fils, int& cols);
   * @param nombre archivo a escribir
   * @param datos punteros a los @a f x @a c bytes que corresponden a los valores
   *    de los píxeles de la imagen de grises.
-  * @param f filas de la imagen
-  * @param c columnas de la imagen
+  * @param fils filas de la imagen
+  * @param ccols columnas de la imagen
   * @return si ha tenido éxito en la escritura.
   */
 bool EscribirImagenPGM (const char *nombre, const unsigned char *datos, 

@@ -42,7 +42,6 @@ int main (int argc, char *argv[]){
   
   cout << "   Imagen   = " << nf  << " filas x " << nc << " columnas " << endl;
   
-  long int contador = 0;
   enmarcar_imagen(i);
   image = i.getTipo() == IMG_PGM ? i.punteroMemoria_pgm() : i.punteroMemoria_ppm();
 

@@ -1,8 +1,7 @@
-all: bin/prueba
+all: bin/prueba doc/html
 
 clear:
-	rm bin/prueba obj/*.o lib/*a
-	echo "Borrados los archivos .o, .a y ejecutable"
+	rm -vr bin/prueba obj/*.o lib/*.a doc/*
 
 bin/prueba: obj/prueba.o lib/libformas.a
 	g++ -Llib/ -o bin/prueba obj/prueba.o -lformas
@@ -21,3 +20,6 @@ obj/imagenES.o: src/imagenES.cpp include/imagenES.h
 
 obj/prueba.o : src/prueba.cpp
 	g++ -g -c -o obj/prueba.o -I./include src/prueba.cpp
+
+doc/html: Doxyfile
+	doxygen Doxyfile

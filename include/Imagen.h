@@ -123,7 +123,6 @@ class Imagen {
 
         /**
          * @brief Rellena un objeto de la clase Imagen (pgm) con el contenido de una imagen (PPM o PGM)
-         * @param I Imagen a rellenar
          * @param memoria Zona de memoria que contiene a la imagen
          * @see Igris()
          * @see rellenarImagen_pgm()
