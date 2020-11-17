@@ -156,4 +156,4 @@ class Imagen {
 
 #endif
 
-//Fin de Imagen.hpp
+/* Fin Fichero: Imagen.h*/

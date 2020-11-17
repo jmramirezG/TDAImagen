@@ -79,7 +79,7 @@ unsigned char *LeerImagenPGM (const char *nombre, int& fils, int& cols);
   * @param datos punteros a los @a f x @a c bytes que corresponden a los valores
   *    de los píxeles de la imagen de grises.
   * @param fils filas de la imagen
-  * @param ccols columnas de la imagen
+  * @param cols columnas de la imagen
   * @return si ha tenido éxito en la escritura.
   */
 bool EscribirImagenPGM (const char *nombre, const unsigned char *datos, 

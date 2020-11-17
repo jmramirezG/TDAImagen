@@ -39,4 +39,4 @@ void umbralizarImagen(Imagen & I, byte T1, byte T2);
 
 #endif
 
-//Fin de FuncionesImagen.hpp
+/* Fin Fichero: funcionesImagen.h*/
