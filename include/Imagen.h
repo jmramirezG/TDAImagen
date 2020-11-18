@@ -85,6 +85,12 @@ class Imagen {
         TipoImagen getTipo() const;
 
         /**
+         * @brief setear tipo de imagen
+         * @param t el tipo de imagen a setear
+         */
+        void setTipo(TipoImagen t);
+
+        /**
          * @brief Consultor el puntero "valores" para una imagen .pgm
          * @return Puntero que contiene los datos relativos a la imagen, dispuestos para escribir en una imagen .pgm
          * @note La imagen no se modifica

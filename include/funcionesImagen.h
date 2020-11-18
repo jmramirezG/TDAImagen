@@ -36,6 +36,24 @@ void binarizar(Imagen & I);
  */
 void umbralizarImagen(Imagen & I, byte T1, byte T2);
 
+/**
+ * @brief Crea un icono con coeficiente nx de reduccion de una imagen
+ * @param I Imagen de la que se crea el icono
+ * @param nf Numero de filas del icono
+ * @param nc Numero de columnas del icono
+ * @note Se crea un nuevo objeto imagen
+ */
+Imagen crearIcono(Imagen & I, int nf, int nc);
+
+/**
+ * @brief Aumenta el contraste de una imagen dados un valor min y max para el contraste
+ * @param I Imagen a contrastar
+ * @param min Extremo inferior del nuevo rango de la imagen
+ * @param max Extremo superior del nuevo rango de la imagen
+ * @note Se modifica la imagen
+ */
+void aumentoContraste(Imagen & I, int min, int max);
+
 
 #endif
 

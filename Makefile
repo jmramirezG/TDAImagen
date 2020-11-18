@@ -1,7 +1,7 @@
 all: bin/prueba doc/html
 
 clear:
-	rm -vr bin/prueba obj/*.o lib/*.a doc/*
+	rm -r bin/prueba obj/*.o lib/*.a doc/*
 
 bin/prueba: obj/prueba.o lib/libformas.a
 	g++ -Llib/ -o bin/prueba obj/prueba.o -lformas

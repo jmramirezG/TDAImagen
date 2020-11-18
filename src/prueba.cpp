@@ -5,7 +5,6 @@
 using namespace std;
 
 int main (int argc, char *argv[]){
- 
   char *origen, *destino; // nombres de los ficheros
 
   unsigned char *image;
@@ -26,12 +25,16 @@ int main (int argc, char *argv[]){
   cout << "Fichero resultado: " << destino << endl;
 
   // Leer la imagen del fichero de entrada
-  Imagen i(origen);
+  Imagen j(origen);
   if (!image){
     cerr << "Error: No pudo leerse la imagen." << endl;
     cerr << "Terminando la ejecucion del programa." << endl;
     exit (1);
   }
+
+  Imagen i = crearIcono(j, 64, 64);
+  umbralizarImagen(i, 10, 220);
+  aumentoContraste(i, 2, 252);
 
   nf = i.num_filas();
   nc = i.num_columnas();
@@ -42,7 +45,6 @@ int main (int argc, char *argv[]){
   
   cout << "   Imagen   = " << nf  << " filas x " << nc << " columnas " << endl;
   
-  enmarcar_imagen(i);
   image = i.getTipo() == IMG_PGM ? i.punteroMemoria_pgm() : i.punteroMemoria_ppm();
 
   bool correcto = i.getTipo() == IMG_PGM ? EscribirImagenPGM(destino, image, nf, nc) : EscribirImagenPPM(destino, image, nf, nc);

@@ -1,3 +1,11 @@
+/**
+  * @file Imagen.cpp
+  * @brief Fichero con definiciones para la clase Imagen
+  *
+  * Permite el trabajo con archivos de tipo PGM,PPM
+  *
+  */
+ 
 #include <Imagen.h>
 #include <cassert>
 #include <iostream>
@@ -94,6 +102,10 @@ int Imagen::num_columnas() const {
 
 TipoImagen Imagen::getTipo() const {
     return tipo;
+}
+
+void Imagen::setTipo(TipoImagen t){
+    this->tipo = t;
 }
 
 byte * Imagen::punteroMemoria_pgm() const {
