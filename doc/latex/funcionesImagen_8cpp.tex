@@ -1,0 +1,135 @@
+\hypertarget{funcionesImagen_8cpp}{}\section{Referencia del Archivo src/funciones\+Imagen.cpp}
+\label{funcionesImagen_8cpp}\index{src/funciones\+Imagen.\+cpp@{src/funciones\+Imagen.\+cpp}}
+
+
+Fichero con definiciones para el archivo \hyperlink{funcionesImagen_8h}{funciones\+Imagen.\+h}.  
+
+
+{\ttfamily \#include $<$funciones\+Imagen.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{funcionesImagen_8cpp_ac556b0d46f45790eac2c72c005f10d06}{enmarcar\+\_\+imagen} (\hyperlink{classImagen}{Imagen} \&I)
+\begin{DoxyCompactList}\small\item\em Enmarca una imagen en un marco de color negro. \end{DoxyCompactList}\item 
+void \hyperlink{funcionesImagen_8cpp_a9bed8c1a8ec88efb94a8c63e6e2a31a0}{binarizar} (\hyperlink{classImagen}{Imagen} \&I)
+\begin{DoxyCompactList}\small\item\em Binariza la imagen, reduciendo los colores posibles a blanco o negro. \end{DoxyCompactList}\item 
+void \hyperlink{funcionesImagen_8cpp_a33654ea9acca39366138c0d7e9942cbe}{umbralizar\+Imagen} (\hyperlink{classImagen}{Imagen} \&I, byte T1, byte T2)
+\begin{DoxyCompactList}\small\item\em Pone los pixeles de una imagen a blanco si no se encuentran en el umbral (T1 -\/ T2) \end{DoxyCompactList}\item 
+\hyperlink{classImagen}{Imagen} \hyperlink{funcionesImagen_8cpp_a6b621beb3f245d4b1b22a0752564f70f}{crear\+Icono} (\hyperlink{classImagen}{Imagen} \&I, int nf, int nc)
+\begin{DoxyCompactList}\small\item\em Crea un icono con coeficiente nx de reduccion de una imagen. \end{DoxyCompactList}\item 
+void \hyperlink{funcionesImagen_8cpp_a8a40f93f0366eacc4e74b81af3c727ac}{aumento\+Contraste} (\hyperlink{classImagen}{Imagen} \&I, int min, int max)
+\begin{DoxyCompactList}\small\item\em Aumenta el contraste de una imagen dados un valor min y max para el contraste. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Fichero con definiciones para el archivo \hyperlink{funcionesImagen_8h}{funciones\+Imagen.\+h}. 
+
+Permite el realizar algunas funciones determinadas con archivos de tipo P\+GM,P\+PM 
+
+\subsection{Documentación de las funciones}
+\mbox{\Hypertarget{funcionesImagen_8cpp_a8a40f93f0366eacc4e74b81af3c727ac}\label{funcionesImagen_8cpp_a8a40f93f0366eacc4e74b81af3c727ac}} 
+\index{funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}!aumento\+Contraste@{aumento\+Contraste}}
+\index{aumento\+Contraste@{aumento\+Contraste}!funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}}
+\subsubsection{\texorpdfstring{aumento\+Contraste()}{aumentoContraste()}}
+{\footnotesize\ttfamily void aumento\+Contraste (\begin{DoxyParamCaption}\item[{\hyperlink{classImagen}{Imagen} \&}]{I,  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+Aumenta el contraste de una imagen dados un valor min y max para el contraste. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I} & \hyperlink{classImagen}{Imagen} a contrastar \\
+\hline
+{\em min} & Extremo inferior del nuevo rango de la imagen \\
+\hline
+{\em max} & Extremo superior del nuevo rango de la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se modifica la imagen 
+\end{DoxyNote}
+\mbox{\Hypertarget{funcionesImagen_8cpp_a9bed8c1a8ec88efb94a8c63e6e2a31a0}\label{funcionesImagen_8cpp_a9bed8c1a8ec88efb94a8c63e6e2a31a0}} 
+\index{funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}!binarizar@{binarizar}}
+\index{binarizar@{binarizar}!funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}}
+\subsubsection{\texorpdfstring{binarizar()}{binarizar()}}
+{\footnotesize\ttfamily void binarizar (\begin{DoxyParamCaption}\item[{\hyperlink{classImagen}{Imagen} \&}]{I }\end{DoxyParamCaption})}
+
+
+
+Binariza la imagen, reduciendo los colores posibles a blanco o negro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I} & \hyperlink{classImagen}{Imagen} a binarizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se modifica la imagen 
+\end{DoxyNote}
+\mbox{\Hypertarget{funcionesImagen_8cpp_a6b621beb3f245d4b1b22a0752564f70f}\label{funcionesImagen_8cpp_a6b621beb3f245d4b1b22a0752564f70f}} 
+\index{funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}!crear\+Icono@{crear\+Icono}}
+\index{crear\+Icono@{crear\+Icono}!funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}}
+\subsubsection{\texorpdfstring{crear\+Icono()}{crearIcono()}}
+{\footnotesize\ttfamily \hyperlink{classImagen}{Imagen} crear\+Icono (\begin{DoxyParamCaption}\item[{\hyperlink{classImagen}{Imagen} \&}]{I,  }\item[{int}]{nf,  }\item[{int}]{nc }\end{DoxyParamCaption})}
+
+
+
+Crea un icono con coeficiente nx de reduccion de una imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I} & \hyperlink{classImagen}{Imagen} de la que se crea el icono \\
+\hline
+{\em nf} & Numero de filas del icono \\
+\hline
+{\em nc} & Numero de columnas del icono \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se crea un nuevo objeto imagen 
+\end{DoxyNote}
+\mbox{\Hypertarget{funcionesImagen_8cpp_ac556b0d46f45790eac2c72c005f10d06}\label{funcionesImagen_8cpp_ac556b0d46f45790eac2c72c005f10d06}} 
+\index{funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}!enmarcar\+\_\+imagen@{enmarcar\+\_\+imagen}}
+\index{enmarcar\+\_\+imagen@{enmarcar\+\_\+imagen}!funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}}
+\subsubsection{\texorpdfstring{enmarcar\+\_\+imagen()}{enmarcar\_imagen()}}
+{\footnotesize\ttfamily void enmarcar\+\_\+imagen (\begin{DoxyParamCaption}\item[{\hyperlink{classImagen}{Imagen} \&}]{I }\end{DoxyParamCaption})}
+
+
+
+Enmarca una imagen en un marco de color negro. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em I} & \hyperlink{classImagen}{Imagen} a enmarcar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Se modifica la imagen 
+\end{DoxyNote}
+\mbox{\Hypertarget{funcionesImagen_8cpp_a33654ea9acca39366138c0d7e9942cbe}\label{funcionesImagen_8cpp_a33654ea9acca39366138c0d7e9942cbe}} 
+\index{funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}!umbralizar\+Imagen@{umbralizar\+Imagen}}
+\index{umbralizar\+Imagen@{umbralizar\+Imagen}!funciones\+Imagen.\+cpp@{funciones\+Imagen.\+cpp}}
+\subsubsection{\texorpdfstring{umbralizar\+Imagen()}{umbralizarImagen()}}
+{\footnotesize\ttfamily void umbralizar\+Imagen (\begin{DoxyParamCaption}\item[{\hyperlink{classImagen}{Imagen} \&}]{I,  }\item[{byte}]{T1,  }\item[{byte}]{T2 }\end{DoxyParamCaption})}
+
+
+
+Pone los pixeles de una imagen a blanco si no se encuentran en el umbral (T1 -\/ T2) 
+
+\begin{DoxyPrecond}{Precondición}
+T1 $<$ T2 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parámetros}
+{\em I} & \hyperlink{classImagen}{Imagen} a umbralizar \\
+\hline
+{\em T1} & Valor inferior del umbral \\
+\hline
+{\em T2} & Valor superior del umbral \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+La imagen \char`\"{}\+I\char`\"{} será modificadaa 
+\end{DoxyNote}

@@ -1,0 +1,365 @@
+\hypertarget{classImagen}{}\section{Referencia de la Clase Imagen}
+\label{classImagen}\index{Imagen@{Imagen}}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classImagen_ab2e649aa7a105155c7bfdb846abf0528}\label{classImagen_ab2e649aa7a105155c7bfdb846abf0528}} 
+\hyperlink{classImagen_ab2e649aa7a105155c7bfdb846abf0528}{Imagen} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de la imagen. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a70437d2848ae5b030ee17cf79651a8b5}{Imagen} (const \hyperlink{classImagen}{Imagen} \&J)
+\begin{DoxyCompactList}\small\item\em Constructor de copia de la imagen. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a18f5296cfd407b2e2dcbe9c74e2f7f1b}{Imagen} (char $\ast$f)
+\begin{DoxyCompactList}\small\item\em Constructor que lee de una imagen (.ppm o .pgm) existente. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a7632978f5ae089713e652bb362da1e78}{Imagen} (int filas, int columnas)
+\begin{DoxyCompactList}\small\item\em Constructor con parámentros de la imagen. \end{DoxyCompactList}\item 
+\hyperlink{classImagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}{$\sim$\+Imagen} ()
+\begin{DoxyCompactList}\small\item\em Destructor de la clase, libera los recursos ocupados por la misma. \end{DoxyCompactList}\item 
+int \hyperlink{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}{num\+\_\+filas} () const
+\begin{DoxyCompactList}\small\item\em Consultor del número de filas de la imagen. \end{DoxyCompactList}\item 
+int \hyperlink{classImagen_ac28d55c18064aea2a65e6fcf51d86191}{num\+\_\+columnas} () const
+\begin{DoxyCompactList}\small\item\em Consultor del número de columnas de la imagen. \end{DoxyCompactList}\item 
+\hyperlink{imagenES_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen} \hyperlink{classImagen_aa48d818ac9ebfd8b466ce8d8e4d93fae}{get\+Tipo} () const
+\begin{DoxyCompactList}\small\item\em Consultor para el tipo de imagen con el que estamos trabajando. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_a438a466496e357a45cd16d77d21c264f}{set\+Tipo} (\hyperlink{imagenES_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen} t)
+\begin{DoxyCompactList}\small\item\em setear tipo de imagen \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{classImagen_a86cf24f7febd691382744ff38aacba0f}{puntero\+Memoria\+\_\+pgm} () const
+\begin{DoxyCompactList}\small\item\em Consultor el puntero \char`\"{}valores\char`\"{} para una imagen .pgm. \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{classImagen_a53c9e3df66783fc3ef3ee43039e540b7}{puntero\+Memoria\+\_\+ppm} () const
+\begin{DoxyCompactList}\small\item\em Consultor el puntero \char`\"{}valores\char`\"{} para una imagen .ppm. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_af9ac39daf075288473967839d9a0d2d8}{asigna\+\_\+pixel} (int fila, int col, byte valor)
+\begin{DoxyCompactList}\small\item\em Asigna un valor a un píxel. \end{DoxyCompactList}\item 
+byte \hyperlink{classImagen_a7d9378695a7fd2dce8092f180e716229}{valor\+\_\+pixel} (int fila, int col) const
+\begin{DoxyCompactList}\small\item\em Consulta el valor de un píxel de la imagen. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_a9a3870103cebf6da0f9771628c182ccf}{rellenar\+Imagen\+\_\+grises} (byte $\ast$memoria)
+\begin{DoxyCompactList}\small\item\em Rellena un objeto de la clase \hyperlink{classImagen}{Imagen} (pgm) con el contenido de una imagen (P\+PM o P\+GM) \end{DoxyCompactList}\item 
+byte $\ast$ \hyperlink{classImagen_a77d5744cb232e2de19e3941eae893961}{Igris} (const byte $\ast$memoria)
+\begin{DoxyCompactList}\small\item\em Pasa de una zona de memoria dispuesta para una imagen .ppm a una dispuesta para una imagen .pgm. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_a361eeffdebd18fa24810cb8e058287ca}{rellenar\+Imagen\+\_\+pgm} (byte $\ast$memoria)
+\begin{DoxyCompactList}\small\item\em Rellena un objeto de la clase \hyperlink{classImagen}{Imagen} con el contenido de una imagen .pgm. \end{DoxyCompactList}\item 
+void \hyperlink{classImagen_ae16cd735c83eb3d3bcb125affa8e0c99}{rellenar\+Imagen\+\_\+ppm} (byte $\ast$memoria)
+\begin{DoxyCompactList}\small\item\em Rellena un objeto de la clase \hyperlink{classImagen}{Imagen} con el contenido de una imagen .ppm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classImagen_a70437d2848ae5b030ee17cf79651a8b5}\label{classImagen_a70437d2848ae5b030ee17cf79651a8b5}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}\item[{const \hyperlink{classImagen}{Imagen} \&}]{J }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em J} & \hyperlink{classImagen}{Imagen} que se pretende copiar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImagen_a18f5296cfd407b2e2dcbe9c74e2f7f1b}\label{classImagen_a18f5296cfd407b2e2dcbe9c74e2f7f1b}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}\item[{char $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+Constructor que lee de una imagen (.ppm o .pgm) existente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em f} & \hyperlink{classImagen}{Imagen} de la que leemos \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La imagen tiene que tener formato .ppm o .pgm 
+\end{DoxyPrecond}
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{imagenES_8cpp_acaa5fb277940aceed29f86c093a3d89c}{Leer\+Tipo\+Imagen(const char $\ast$nombre)} 
+
+\hyperlink{imagenES_8cpp_a05aea20533de5bbd02789f76aafbb99b}{Leer\+Imagen\+P\+PM} (const char $\ast$nombre, int\& fils, int\& cols) 
+
+\hyperlink{imagenES_8cpp_a03340a1e1e4a88385c972bb4af463649}{Leer\+Imagen\+P\+GM} (const char $\ast$nombre, int\& fils, int\& cols) 
+
+\hyperlink{classImagen_a9a3870103cebf6da0f9771628c182ccf}{rellenar\+Imagen\+\_\+grises(byte $\ast$ memoria)} 
+
+\hyperlink{classImagen_a361eeffdebd18fa24810cb8e058287ca}{rellenar\+Imagen\+\_\+pgm(byte $\ast$ memoria)} 
+
+\hyperlink{classImagen_ae16cd735c83eb3d3bcb125affa8e0c99}{rellenar\+Imagen\+\_\+ppm(byte $\ast$ memoria)} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classImagen_a7632978f5ae089713e652bb362da1e78}\label{classImagen_a7632978f5ae089713e652bb362da1e78}} 
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\index{Imagen@{Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Imagen()}{Imagen()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Imagen\+::\+Imagen (\begin{DoxyParamCaption}\item[{int}]{filas,  }\item[{int}]{columnas }\end{DoxyParamCaption})}
+
+
+
+Constructor con parámentros de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filas} & Número de filas (píxeles verticales) que contiene la imagen \\
+\hline
+{\em columnas} & Número de columnas (píxeles horizontales) que contiene la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+filas $>$ 0 
+
+columnas $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+La imagen creada tiene \char`\"{}filas\char`\"{} filas y \char`\"{}columnas\char`\"{} columnas, contiene valores basura (no inicializada) 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}\label{classImagen_a03dd93c9cf920a9dc0b72f8bd34f2e8a}} 
+\index{Imagen@{Imagen}!````~Imagen@{$\sim$\+Imagen}}
+\index{````~Imagen@{$\sim$\+Imagen}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{$\sim$\+Imagen()}{~Imagen()}}
+{\footnotesize\ttfamily Imagen\+::$\sim$\+Imagen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor de la clase, libera los recursos ocupados por la misma. 
+
+\begin{DoxyNote}{Nota}
+No devuelve nada. La imagen destruida no puede volver a usarse a no ser que vuelva a crearse 
+\end{DoxyNote}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classImagen_af9ac39daf075288473967839d9a0d2d8}\label{classImagen_af9ac39daf075288473967839d9a0d2d8}} 
+\index{Imagen@{Imagen}!asigna\+\_\+pixel@{asigna\+\_\+pixel}}
+\index{asigna\+\_\+pixel@{asigna\+\_\+pixel}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{asigna\+\_\+pixel()}{asigna\_pixel()}}
+{\footnotesize\ttfamily void Imagen\+::asigna\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{fila,  }\item[{int}]{col,  }\item[{byte}]{valor }\end{DoxyParamCaption})}
+
+
+
+Asigna un valor a un píxel. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fila} & Fila de la imagen a la que asigna el valor \\
+\hline
+{\em col} & Columna de la imagen a la que asigna el valor \\
+\hline
+{\em valor} & Valor que se le asigna al píxel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+0 $<$= fila $<$ \hyperlink{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}{num\+\_\+filas()} 
+
+0 $<$= col $<$ \hyperlink{classImagen_ac28d55c18064aea2a65e6fcf51d86191}{num\+\_\+columnas()} 
+
+0 $<$= valor $<$ 256 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No devuelve nada y se modifica la imagen en el píxel (fila, col) 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_aa48d818ac9ebfd8b466ce8d8e4d93fae}\label{classImagen_aa48d818ac9ebfd8b466ce8d8e4d93fae}} 
+\index{Imagen@{Imagen}!get\+Tipo@{get\+Tipo}}
+\index{get\+Tipo@{get\+Tipo}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{get\+Tipo()}{getTipo()}}
+{\footnotesize\ttfamily \hyperlink{imagenES_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen} Imagen\+::get\+Tipo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor para el tipo de imagen con el que estamos trabajando. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el tipo de imagen con el que estamos trabajando 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+No se modifica el tipo de imagen 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a77d5744cb232e2de19e3941eae893961}\label{classImagen_a77d5744cb232e2de19e3941eae893961}} 
+\index{Imagen@{Imagen}!Igris@{Igris}}
+\index{Igris@{Igris}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{Igris()}{Igris()}}
+{\footnotesize\ttfamily byte $\ast$ Imagen\+::\+Igris (\begin{DoxyParamCaption}\item[{const byte $\ast$}]{memoria }\end{DoxyParamCaption})}
+
+
+
+Pasa de una zona de memoria dispuesta para una imagen .ppm a una dispuesta para una imagen .pgm. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em memoria} & Zona de memoria que contiene a la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+No modifica la imagen que le pasamos por parámetros 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_ac28d55c18064aea2a65e6fcf51d86191}\label{classImagen_ac28d55c18064aea2a65e6fcf51d86191}} 
+\index{Imagen@{Imagen}!num\+\_\+columnas@{num\+\_\+columnas}}
+\index{num\+\_\+columnas@{num\+\_\+columnas}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{num\+\_\+columnas()}{num\_columnas()}}
+{\footnotesize\ttfamily int Imagen\+::num\+\_\+columnas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del número de columnas de la imagen. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de columnas 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+La imagen no se modifica 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}\label{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}} 
+\index{Imagen@{Imagen}!num\+\_\+filas@{num\+\_\+filas}}
+\index{num\+\_\+filas@{num\+\_\+filas}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{num\+\_\+filas()}{num\_filas()}}
+{\footnotesize\ttfamily int Imagen\+::num\+\_\+filas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del número de filas de la imagen. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el número de filas 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+La imagen no se modifica 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a86cf24f7febd691382744ff38aacba0f}\label{classImagen_a86cf24f7febd691382744ff38aacba0f}} 
+\index{Imagen@{Imagen}!puntero\+Memoria\+\_\+pgm@{puntero\+Memoria\+\_\+pgm}}
+\index{puntero\+Memoria\+\_\+pgm@{puntero\+Memoria\+\_\+pgm}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{puntero\+Memoria\+\_\+pgm()}{punteroMemoria\_pgm()}}
+{\footnotesize\ttfamily byte $\ast$ Imagen\+::puntero\+Memoria\+\_\+pgm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor el puntero \char`\"{}valores\char`\"{} para una imagen .pgm. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero que contiene los datos relativos a la imagen, dispuestos para escribir en una imagen .pgm 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+La imagen no se modifica 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a53c9e3df66783fc3ef3ee43039e540b7}\label{classImagen_a53c9e3df66783fc3ef3ee43039e540b7}} 
+\index{Imagen@{Imagen}!puntero\+Memoria\+\_\+ppm@{puntero\+Memoria\+\_\+ppm}}
+\index{puntero\+Memoria\+\_\+ppm@{puntero\+Memoria\+\_\+ppm}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{puntero\+Memoria\+\_\+ppm()}{punteroMemoria\_ppm()}}
+{\footnotesize\ttfamily byte $\ast$ Imagen\+::puntero\+Memoria\+\_\+ppm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor el puntero \char`\"{}valores\char`\"{} para una imagen .ppm. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero que contiene los datos relativos a la imagen, dispuestos para escribir en una imagen .ppm 
+\end{DoxyReturn}
+\begin{DoxyNote}{Nota}
+La imagen no se modifica 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a9a3870103cebf6da0f9771628c182ccf}\label{classImagen_a9a3870103cebf6da0f9771628c182ccf}} 
+\index{Imagen@{Imagen}!rellenar\+Imagen\+\_\+grises@{rellenar\+Imagen\+\_\+grises}}
+\index{rellenar\+Imagen\+\_\+grises@{rellenar\+Imagen\+\_\+grises}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{rellenar\+Imagen\+\_\+grises()}{rellenarImagen\_grises()}}
+{\footnotesize\ttfamily void Imagen\+::rellenar\+Imagen\+\_\+grises (\begin{DoxyParamCaption}\item[{byte $\ast$}]{memoria }\end{DoxyParamCaption})}
+
+
+
+Rellena un objeto de la clase \hyperlink{classImagen}{Imagen} (pgm) con el contenido de una imagen (P\+PM o P\+GM) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em memoria} & Zona de memoria que contiene a la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{Ver también}
+\hyperlink{classImagen_a77d5744cb232e2de19e3941eae893961}{Igris()} 
+
+\hyperlink{classImagen_a361eeffdebd18fa24810cb8e058287ca}{rellenar\+Imagen\+\_\+pgm()} 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Nota}
+Modifica la imagen que le pasamos por parámetros 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a361eeffdebd18fa24810cb8e058287ca}\label{classImagen_a361eeffdebd18fa24810cb8e058287ca}} 
+\index{Imagen@{Imagen}!rellenar\+Imagen\+\_\+pgm@{rellenar\+Imagen\+\_\+pgm}}
+\index{rellenar\+Imagen\+\_\+pgm@{rellenar\+Imagen\+\_\+pgm}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{rellenar\+Imagen\+\_\+pgm()}{rellenarImagen\_pgm()}}
+{\footnotesize\ttfamily void Imagen\+::rellenar\+Imagen\+\_\+pgm (\begin{DoxyParamCaption}\item[{byte $\ast$}]{memoria }\end{DoxyParamCaption})}
+
+
+
+Rellena un objeto de la clase \hyperlink{classImagen}{Imagen} con el contenido de una imagen .pgm. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em memoria} & Zona de memoria que contiene a la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Modifica la zona de memoria que le pasamos por parámetros 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_ae16cd735c83eb3d3bcb125affa8e0c99}\label{classImagen_ae16cd735c83eb3d3bcb125affa8e0c99}} 
+\index{Imagen@{Imagen}!rellenar\+Imagen\+\_\+ppm@{rellenar\+Imagen\+\_\+ppm}}
+\index{rellenar\+Imagen\+\_\+ppm@{rellenar\+Imagen\+\_\+ppm}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{rellenar\+Imagen\+\_\+ppm()}{rellenarImagen\_ppm()}}
+{\footnotesize\ttfamily void Imagen\+::rellenar\+Imagen\+\_\+ppm (\begin{DoxyParamCaption}\item[{byte $\ast$}]{memoria }\end{DoxyParamCaption})}
+
+
+
+Rellena un objeto de la clase \hyperlink{classImagen}{Imagen} con el contenido de una imagen .ppm. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em memoria} & Zona de memoria que contiene a la imagen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Nota}
+Modifica la zona de memoria que le pasamos por parámetros 
+\end{DoxyNote}
+\mbox{\Hypertarget{classImagen_a438a466496e357a45cd16d77d21c264f}\label{classImagen_a438a466496e357a45cd16d77d21c264f}} 
+\index{Imagen@{Imagen}!set\+Tipo@{set\+Tipo}}
+\index{set\+Tipo@{set\+Tipo}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{set\+Tipo()}{setTipo()}}
+{\footnotesize\ttfamily void Imagen\+::set\+Tipo (\begin{DoxyParamCaption}\item[{\hyperlink{imagenES_8h_a8914f6544a484741b05c092d9e7522ed}{Tipo\+Imagen}}]{t }\end{DoxyParamCaption})}
+
+
+
+setear tipo de imagen 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em t} & el tipo de imagen a setear \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classImagen_a7d9378695a7fd2dce8092f180e716229}\label{classImagen_a7d9378695a7fd2dce8092f180e716229}} 
+\index{Imagen@{Imagen}!valor\+\_\+pixel@{valor\+\_\+pixel}}
+\index{valor\+\_\+pixel@{valor\+\_\+pixel}!Imagen@{Imagen}}
+\subsubsection{\texorpdfstring{valor\+\_\+pixel()}{valor\_pixel()}}
+{\footnotesize\ttfamily byte Imagen\+::valor\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{fila,  }\item[{int}]{col }\end{DoxyParamCaption}) const}
+
+
+
+Consulta el valor de un píxel de la imagen. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em fila} & Fila de la que queremos consultar el valor \\
+\hline
+{\em col} & Columna de la que queremos consultar el valor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el valor del píxel (fila, col) 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+0 $<$= fila $<$ \hyperlink{classImagen_a4cb4faa04f5e2913965e43a6a65acfd1}{num\+\_\+filas()} 
+
+0 $<$= col $<$ \hyperlink{classImagen_ac28d55c18064aea2a65e6fcf51d86191}{num\+\_\+columnas()} 
+\end{DoxyPrecond}
+\begin{DoxyNote}{Nota}
+No se modifica la imagen y 0 $<$= valor $<$ 256 
+\end{DoxyNote}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Imagen_8h}{Imagen.\+h}\item 
+src/\hyperlink{Imagen_8cpp}{Imagen.\+cpp}\end{DoxyCompactItemize}
